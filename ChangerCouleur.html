@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #colorChangingElement {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div id="colorChangingElement"></div>
+
+<script>
+  var colorElement = document.getElementById('colorChangingElement');
+  var isRed = true;
+
+  function changeColor() {
+    if (isRed) {
+      colorElement.style.backgroundColor = 'blue';
+    } else {
+      colorElement.style.backgroundColor = 'red';
+    }
+    isRed = !isRed;
+    setTimeout(changeColor, 1000);
+  }
+
+  changeColor();
+</script>
+
+</body>
+</html>
